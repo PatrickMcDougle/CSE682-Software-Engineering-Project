@@ -1,1 +1,70 @@
-<mxfile host="app.diagrams.net" modified="2021-09-04T17:36:21.513Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36" etag="NIbFAQKp75rg-quybQvJ" version="15.0.6" type="github"><diagram id="iCk0-uuXN-dzac4KxJ9Y" name="Page-1">7Zldb9owFIZ/DZeb8gn0kkHbTepU1Gpa2c1kkrPEkxOnxoGwXz8ncUhiA2VsQKRx09qvP5K8ec6xY3r2OMruGUrCz9QH0rMMP+vZk55lOX1D/M2FdSkMhk4pBAz7pWTWwjP+BVKU44IU+7BodeSUEo6TtujROAaPtzTEGF21u/2gpH3VBAWgCc8eIrr6Ffs8LNWha9T6R8BBWF3ZNGRLhKrOUliEyKerhmTf9uwxo5SXpSgbA8m9q3wpx93taN3cGIOYHzJgOHt9fHwIUDi4X6No9XPw3Vm+c+TNLRFJ5RNPgAOLcAy+0Ccw58W/BWepxzGNe1afiOt9mDNRCvLSVbkqu5UCfb6u4onRNPYhR9IQzasQc3hOkJe3rkQCEVrIIyJq5mZ0E3FJ/RIYh6whSeTvgUbA2Vp0qVqrBCTzz1BWV3Uwu1UQhI1AdqqOSCaQYDN1HWOiIMPsD0LO1CLuywKYZpRIF0leTCMy8jhlwo78qbFITQ9oDmRKF7iIR3syp5zTqNFhRHCQN3CqGEpTTkRkjzfJ0vg3Lrttk21Dd9neYnL/VB7bmsdjBohDndFGnidI5JrtYnKxtMBZ2NzAKG0zXd0209ri2+nYdHXjEPFS0vJuitZR/tSW8VToF7TQtRULBxe3sH+IhZ9isciKRbVT5lkXN8/SA1d3KPZH+cZO1GIaQ9sVyDB/aZRneY5778raJJMpr6isq0osbv2lWWmMyqv1sKJWjdv5BhY0ZV717jNY39GELF9nDy/jp5H3LRhVSwBHLAC+jyUZjuC3Nqn6C22uZlveV6UxEBTiZXtru+0lyitMKS7CvNrMq8FmKRyUDy5HNbei6kRK4hso85TGaPMUSG2e+i8oc66UbclYHaHMNZXNxLGUuf0d6e1cmOmL6XGY1WgdBJqoTIHhKP+OOwd8+3a5b8Jnd4q9DWsSGedY9uyBAvG52dN3If81e/sSZEfYs1T2zCPZM5WJLHWiU7M3uLL3JntWt9hTPuAd9cv8YPaUxdtSE+iJ2bOvee9t9rq15po3bWRc9evyUPbU4xTn5mTs7VtOGug9AfJ7nT5yss555LQvETaPQxO/80d19sV9009KJkCg6745J/RNVOtf08qgrn+StG9/Aw==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-09-04T17:36:57.149Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36" etag="SGR3YFBOACxQ4R6KnxKL" version="15.0.6" type="github">
+  <diagram id="iCk0-uuXN-dzac4KxJ9Y" name="Page-1">
+    <mxGraphModel dx="460" dy="784" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8YqOOLgah7Gyamwj7_4v-40" value="Determined Debt Destruction&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="80" width="540" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="8YqOOLgah7Gyamwj7_4v-1" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
+          <mxGeometry x="50" y="300" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8YqOOLgah7Gyamwj7_4v-3" value="Create Recurring Charges" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="150" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8YqOOLgah7Gyamwj7_4v-15" value="Calculate Debt Payment Rate" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="530" y="170" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8YqOOLgah7Gyamwj7_4v-16" value="Calculate Debt Interest" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="530" y="270" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="8YqOOLgah7Gyamwj7_4v-23" value="" style="endArrow=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="CxeyFoplvqYLXCRAcZgA-1" target="8YqOOLgah7Gyamwj7_4v-15" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="430" y="120" as="sourcePoint" />
+            <mxPoint x="480" y="70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8YqOOLgah7Gyamwj7_4v-24" value="" style="endArrow=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="CxeyFoplvqYLXCRAcZgA-1" target="8YqOOLgah7Gyamwj7_4v-16" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="510" y="320" as="sourcePoint" />
+            <mxPoint x="560" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8YqOOLgah7Gyamwj7_4v-25" value="" style="endArrow=none;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="8YqOOLgah7Gyamwj7_4v-1" target="8YqOOLgah7Gyamwj7_4v-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="420" as="sourcePoint" />
+            <mxPoint x="370" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8YqOOLgah7Gyamwj7_4v-26" value="" style="endArrow=none;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="8YqOOLgah7Gyamwj7_4v-1" target="CxeyFoplvqYLXCRAcZgA-1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="220" y="410" as="sourcePoint" />
+            <mxPoint x="120" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8YqOOLgah7Gyamwj7_4v-27" value="" style="endArrow=none;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="8YqOOLgah7Gyamwj7_4v-1" target="CxeyFoplvqYLXCRAcZgA-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250" y="460" as="sourcePoint" />
+            <mxPoint x="110" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8YqOOLgah7Gyamwj7_4v-36" value="" style="endArrow=none;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="8YqOOLgah7Gyamwj7_4v-1" target="CxeyFoplvqYLXCRAcZgA-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="580" as="sourcePoint" />
+            <mxPoint x="280" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CxeyFoplvqYLXCRAcZgA-1" value="Read Recurring Charges" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="250" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CxeyFoplvqYLXCRAcZgA-2" value="Update Recurring Charges" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="350" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CxeyFoplvqYLXCRAcZgA-3" value="Delete Recurring Charges" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="450" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
