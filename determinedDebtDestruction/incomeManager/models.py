@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+#change test from jamie
 class Income(models.Model):
     PAY_FREQUENCIES = (
         ('D', 'Daily'),
