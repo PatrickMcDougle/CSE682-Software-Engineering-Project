@@ -3,26 +3,28 @@
 	{% for charge in recurringCharges %}
 		<div class="content-section">
 			<h1>Recurring Charge Name: {{ charge.name }}</h1>
+			<p>
 			Payment Due Date: {{ charge.payDueDate }}<br>
 			{% load humanize %}
 			Payment Amount: ${{charge.payAmount|floatformat:2|intcomma}}<br>
 			{% if charge.paySchedule == 'D' %}
-				<p>Pay Schedule: Daily<br>
+				Pay Schedule: Daily<br>
 			{% elif charge.paySchedule == 'W'%}
-				<p>Pay Schedule: Weekly<br>
+				Pay Schedule: Weekly<br>
 			{% elif charge.paySchedule == 'B'%}
-				<p>Pay Schedule: Bi-weekly<br>
+				Pay Schedule: Bi-weekly<br>
 			{% elif charge.paySchedule == 'S'%}
-				<p>Pay Schedule: Semi-Monthly<br>
+				Pay Schedule: Semi-Monthly<br>
 			{% elif charge.paySchedule == 'M'%}
-				<p>Pay Schedule: Monthly<br>
+				Pay Schedule: Monthly<br>
 			{% else %}
-				<p>Pay Schedule: Yearly<br>
+				Pay Schedule: Yearly<br>
 			{% endif %}
+			</p>
+		</div>
 			{% empty %}
 				<div class="content-section">
 				<h1>No Recurring Charges Found!</h1>
-		</div>
-		</p>
+				</div>
 	{% endfor %}
 {% endblock content %}

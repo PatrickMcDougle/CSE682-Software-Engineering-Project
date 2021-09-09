@@ -19,10 +19,11 @@
 			APR: ${{debt.APR|floatformat:2|intcomma}}<br>
 			Payment Due Date: {{ debt.paymentDate }}<br>
 			Minimum Payment Due: ${{ debt.minimumPaymentRequired }}
+			</p>
+		</div>
 			{% empty %}
 				<div class="content-section">
 				<h1>No Debts Found! AWESOME!</h1>
-			</p>
-		</div>
+				</div>
 	{% endfor %}
 {% endblock content %}

@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 class Income(models.Model):
     PAY_FREQUENCIES = (
@@ -40,3 +41,6 @@ class Income(models.Model):
         else: #Paid Monthly
             monthlyIncome = self.payAmount
         return monthlyIncome
+        
+    def get_absolute_url(self):
+        return reverse('income-detail', kwargs={'pk': self.pk})
