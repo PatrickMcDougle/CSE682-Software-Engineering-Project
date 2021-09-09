@@ -22,4 +22,5 @@ urlpatterns = [
     path('register/', user_views.register, name='register'),
     path('admin/', admin.site.urls),
     path('income/', include('incomeManager.urls')),
+    path('debt/', include('debtManager.urls')),
 ]
