@@ -17,10 +17,10 @@ class Income(models.Model):
         ('R', 'Thursday'),
         ('F', 'Friday'),
     )
-    name = models.CharField("Income Source:", max_length=100)
-    payFrequency = models.CharField("Frequency of Pay:", max_length=1, choices=PAY_FREQUENCIES)
-    payAmount = models.FloatField()
-    payDay = models.CharField('Payday:', max_length=1, choices=PAY_DAYS)
+    name          = models.CharField("Income Source:", max_length=100)
+    payFrequency  = models.CharField("Frequency of Pay:", max_length=1, choices=PAY_FREQUENCIES)
+    payAmount     = models.FloatField()
+    payDay        = models.CharField('Payday:', max_length=1, choices=PAY_DAYS)
     accountHolder = models.ForeignKey(User, on_delete=models.CASCADE, null=True) #Attach an Income to the user!
 
     def __str__(self):

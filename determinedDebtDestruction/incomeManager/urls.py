@@ -1,3 +1,6 @@
+"""
+    This is the URL.py file for the Income Manager
+"""
 from django.urls import path
 from . import views
 
