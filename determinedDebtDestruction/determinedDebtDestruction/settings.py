@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'recurringChargesManager.apps.RecurringchargesmanagerConfig',
     'debtManager.apps.DebtmanagerConfig',
     'users.apps.UsersConfig',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -129,3 +130,12 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#Set Crispy Forms to use bootstrap 4 instead of default of bootstrap 2
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+#Redirect Login Success
+LOGIN_REDIRECT_URL = 'homepage-home'
+
+#Set default Login URL
+LOGIN_URL = 'login'
