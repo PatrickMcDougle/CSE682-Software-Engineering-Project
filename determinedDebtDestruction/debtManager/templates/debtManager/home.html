@@ -1,23 +1,28 @@
 {% extends "homepage/base.html" %}
 {% block content %}
 	{% for debt in debts %}
-		<h1>{{ debt.nickname }}</h1>
-		<p>
-		Account Number: {{ debt.accountNumber }}<br>
-		{% if debt.debtType == 'C' %}
-			Debt Type: Credit Card<br>
-		{% elif debt.debtType == 'B'%}
-			Debt Type: Bank Loan<br>
-		{% elif debt.debtType == 'L'%}
-			Debt Type: Loan Shark<br>
-		{% else %}
-			Debt Type: Other<br>
-		{% endif %}
-		{% load humanize %}
-		Current Debt Amount: ${{ debt.currentDebtAmount|floatformat:2|intcomma }}<br>
-		APR: ${{debt.APR|floatformat:2|intcomma}}<br>
-		Payment Due Date: {{ debt.paymentDate }}<br>
-		Minimum Payment Due: ${{ debt.minimumPaymentRequired }}
-		</p>
+		<div class="content-section">
+			<h1>Debt Source: {{ debt.nickname }}</h1>
+			<p>
+			Account Number: {{ debt.accountNumber }}<br>
+			{% if debt.debtType == 'C' %}
+				Debt Type: Credit Card<br>
+			{% elif debt.debtType == 'B'%}
+				Debt Type: Bank Loan<br>
+			{% elif debt.debtType == 'L'%}
+				Debt Type: Loan Shark<br>
+			{% else %}
+				Debt Type: Other<br>
+			{% endif %}
+			{% load humanize %}
+			Current Debt Amount: ${{ debt.currentDebtAmount|floatformat:2|intcomma }}<br>
+			APR: ${{debt.APR|floatformat:2|intcomma}}<br>
+			Payment Due Date: {{ debt.paymentDate }}<br>
+			Minimum Payment Due: ${{ debt.minimumPaymentRequired }}
+			{% empty %}
+				<div class="content-section">
+				<h1>No Debts Found! AWESOME!</h1>
+			</p>
+		</div>
 	{% endfor %}
 {% endblock content %}

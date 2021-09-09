@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
+from django.conf import settings # Not used, but if we want to serve static media files
+from django.conf.urls.static import static # Not used, but if we want to serve static media files
 from users import views as user_views
 
 urlpatterns = [
@@ -28,4 +30,8 @@ urlpatterns = [
     path('income/', include('incomeManager.urls')),
     path('debt/', include('debtManager.urls')),
     path('charges/', include('recurringChargesManager.urls'))
-]
+] 
+
+# Not used, but if we want to serve static media files (only if we are in Debug mode!
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

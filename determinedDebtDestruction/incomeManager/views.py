@@ -5,10 +5,10 @@ from .models import Income
 #Ensures that the user can not access the page without being logged in
 @login_required 
 def home(request):
-    #incomes_list = Income.objects.all()
-    #my_incomes = incomes_list.filter(user=request.user) #Filter incomes based on logged in user
+    incomes_list = Income.objects.all()
+    my_incomes = incomes_list.filter(accountHolder=request.user) #Filter incomes based on logged in user
     context = {
-        'incomes': Income.objects.all()
+     'incomes': my_incomes
     }
     return render(request, 'incomeManager/home.html', context)
 

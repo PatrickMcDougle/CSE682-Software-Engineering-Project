@@ -5,8 +5,10 @@ from .models import Debt
 #Ensures that the user can not access the page without being logged in
 @login_required 
 def home(request):
+    debts_list = Debt.objects.all()
+    my_debts = debts_list.filter(accountHolder=request.user) #Filter incomes based on logged in user
     context = {
-        'debts': Debt.objects.all()
+        'debts': my_debts
     }
     return render(request, 'debtManager/home.html', context)
 
