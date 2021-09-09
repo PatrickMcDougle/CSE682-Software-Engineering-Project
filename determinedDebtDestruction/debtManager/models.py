@@ -18,11 +18,25 @@ class Debt(models.Model):
         ('R', 'Thursday'),
         ('F', 'Friday'),
     )
-    name = models.CharField("Debt Source:", max_length=100)
-    payFrequency = models.CharField("Frequency of Pay:", max_length=1, choices=PAY_FREQUENCIES)
-    payAmount = models.FloatField()
+    DEBT_TYPES = (
+        ('CC', 'Credit Card'),
+        ('BL', 'Bank Loan'),
+        ('LS', 'Loan Shark'),
+        ('M',  'Mortgage'),
+        ('CL', 'Car Loan'),
+    )
+
+    name = models.CharField("Debt Nickname:", max_length=100)
+    accountNumber = models.CharField("Account Number", max_length=100)
+    debtType = models.CharField("Debt Type:", max_length=2, choices=DEBT_TYPES)
+    debtCompany = models.CharField("Company Name:", max_length=100)
+    debtCompanyAddress = models.CharField("Company Address:", max_length=100)
+    apr = models.FloatField("APR")
+    dueDate = models.DateField("Due Date")
+    payAmount = models.FloatField("Minimum Payment Amount")
     payDay = models.CharField('Payday:', max_length=1, choices=PAY_DAYS)
     accountHolder = models.ForeignKey(User, on_delete=models.CASCADE, null=True) #Attach an Income to the user!
+    
 
     def __str__(self):
         return self.name
