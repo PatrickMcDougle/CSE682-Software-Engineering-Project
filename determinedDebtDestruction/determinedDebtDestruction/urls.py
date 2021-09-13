@@ -32,9 +32,3 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('income/', include('incomeManager.urls')),
     path('debt/', include('debtManager.urls')),
-    path('charges/', include('recurringChargesManager.urls'))
-] 
-
-# Not used, but if we want to serve static media files (only if we are in Debug mode!
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
