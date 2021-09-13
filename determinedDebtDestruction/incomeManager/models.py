@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 #change test from jamie
 class Income(models.Model):
@@ -18,10 +19,10 @@ class Income(models.Model):
         ('R', 'Thursday'),
         ('F', 'Friday'),
     )
-    name = models.CharField("Income Source:", max_length=100)
-    payFrequency = models.CharField("Frequency of Pay:", max_length=1, choices=PAY_FREQUENCIES)
-    payAmount = models.FloatField()
-    payDay = models.CharField('Payday:', max_length=1, choices=PAY_DAYS)
+    name          = models.CharField("Income Source:", max_length=100)
+    payFrequency  = models.CharField("Frequency of Pay:", max_length=1, choices=PAY_FREQUENCIES)
+    payAmount     = models.FloatField()
+    payDay        = models.CharField('Payday:', max_length=1, choices=PAY_DAYS)
     accountHolder = models.ForeignKey(User, on_delete=models.CASCADE, null=True) #Attach an Income to the user!
 
     def __str__(self):
@@ -41,3 +42,6 @@ class Income(models.Model):
         else: #Paid Monthly
             monthlyIncome = self.payAmount
         return monthlyIncome
+        
+    def get_absolute_url(self):
+        return reverse('income-detail', kwargs={'pk': self.pk})

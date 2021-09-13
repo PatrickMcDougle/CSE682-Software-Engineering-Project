@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 
+import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -35,6 +37,7 @@ INSTALLED_APPS = [
     'incomeManager.apps.IncomemanagerConfig',
     'debtManager.apps.DebtmanagerConfig',
     'users.apps.UsersConfig',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -124,7 +127,21 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#Where do we want Django to save media files. This is not on the database!
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#Public Display on website when serving files
+MEDIA_URL = '/media/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#Set Crispy Forms to use bootstrap 4 instead of default of bootstrap 2
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+#Redirect Login Success
+LOGIN_REDIRECT_URL = 'homepage-home'
+
+#Set default Login URL
+LOGIN_URL = 'login'
