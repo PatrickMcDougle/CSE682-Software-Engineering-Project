@@ -1,6 +1,4 @@
-"""
-    This is the URL.py file for the Debt Manager
-"""
+
 from django.urls import path
 from . import views
 

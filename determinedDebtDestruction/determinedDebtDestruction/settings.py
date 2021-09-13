@@ -35,7 +35,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
     'incomeManager.apps.IncomemanagerConfig',
-    'recurringChargesManager.apps.RecurringchargesmanagerConfig',
     'debtManager.apps.DebtmanagerConfig',
     'users.apps.UsersConfig',
     'crispy_forms',

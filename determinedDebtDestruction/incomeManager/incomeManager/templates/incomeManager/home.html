@@ -1,0 +1,33 @@
+{% extends "incomeManager/base.html" %}
+{% block content %}
+	{% for income in incomes %}
+		<h1>{{ income.name }}</h1>
+		{% if income.payFrequency == 'D' %}
+			<p>Pay Frequency: Daily<br>
+		{% elif income.payFrequency == 'W'%}
+			<p>Pay Frequency: Weekly<br>
+		{% elif income.payFrequency == 'B'%}
+			<p>Pay Frequency: Bi-weekly<br>
+		{% elif income.payFrequency == 'S'%}
+			<p>Pay Frequency: Semi-Monthly<br>
+		{% elif income.payFrequency == 'M'%}
+			<p>Pay Frequency: Monthly<br>
+		{% else %}
+			<p>Pay Frequency: Yearly<br>
+		{% endif %}
+		{% load humanize %}
+		Pay Amount: ${{income.payAmount|floatformat:2|intcomma}}<br>
+		{% if income.payDay == 'M' %}
+			Pay Date: Monday<br>
+		{% elif income.payDay == 'T'%}
+			Pay Date: Tuesday<br>
+		{% elif income.payDay == 'W'%}
+			Pay Date: Wednesday<br>
+		{% elif income.payDay == 'R'%}
+			Pay Date: Thursday<br>
+		{% else %}
+			Pay Date: Friday<br>
+		{% endif %}
+		Calculated Monthly Income: ${{income.determineMonthlyIncome|floatformat:2|intcomma}}<br></p>
+	{% endfor %}
+{% endblock content %}
