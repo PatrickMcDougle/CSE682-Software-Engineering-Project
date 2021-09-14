@@ -1,0 +1,31 @@
+{% extends "homepage/base.html" %}
+{% block content %}
+	<div class="content-section">
+		<h1>Recurring Charge Name: {{ object.name }}</h1>
+			<p>
+			Payment Due Date: {{ object.payDueDate }}<br>
+			{% load humanize %}
+			Payment Amount: ${{object.payAmount|floatformat:2|intcomma}}<br>
+			{% if object.paySchedule == 'D' %}
+				Pay Schedule: Daily<br>
+			{% elif object.paySchedule == 'W'%}
+				Pay Schedule: Weekly<br>
+			{% elif object.paySchedule == 'B'%}
+				Pay Schedule: Bi-weekly<br>
+			{% elif object.paySchedule == 'S'%}
+				Pay Schedule: Semi-Monthly<br>
+			{% elif object.paySchedule == 'M'%}
+				Pay Schedule: Monthly<br>
+			{% else %}
+				Pay Schedule: Yearly<br>
+			{% endif %}
+			</p>
+		<div>
+			{% if object.accountHolder == user %}
+				<a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'recurring-charges-update' object.id %}">Update</a>
+				<a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'recurring-charges-delete' object.id %}">Delete</a>
+			{% endif %}
+		</div>
+		</p>
+	</div>		
+{% endblock content %}

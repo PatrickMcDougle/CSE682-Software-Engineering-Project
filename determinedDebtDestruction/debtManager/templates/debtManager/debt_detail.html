@@ -1,0 +1,21 @@
+{% extends "homepage/base.html" %}
+{% block content %}
+	<div class="content-section">
+		<h1 class="article-title">Debt Source: {{ object.nickname }}</h1>
+		<p>
+		Account Number: {{object.accountNumber}}<br>
+		{% load humanize %}
+		Current Debt Amount: ${{object.currentDebtAmount|floatformat:2|intcomma}}<br>
+		Debt Type: {{object.debtType}}<br>
+		APR: {{object.APR|floatformat:2}}<br>		
+		Minimum Payment Amount: ${{object.minimumPaymentRequired|floatformat:2|intcomma}}<br>
+		Payment Due Date: {{object.paymentDate}}<br>
+		<div>
+			{% if object.accountHolder == user %}
+				<a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'debt-update' object.id %}">Update</a>
+				<a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'debt-delete' object.id %}">Delete</a>
+			{% endif %}
+		</div>
+		</p>
+	</div>		
+{% endblock content %}

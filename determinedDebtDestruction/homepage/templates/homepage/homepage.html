@@ -1,4 +1,39 @@
 {% extends "homepage/base.html" %}
 {% block content %}
-	<h1>Welcome to the Homepage for Determined Debt Destruction!</h1>
+	{% if user.is_authenticated %}
+		<h1>Welcome to the Homepage for Determined Debt Destruction!</h1>
+		<p>
+			A summary of your recorded information is listed below!
+		</p>
+	{% else %}
+		<h1>Welcome to the Homepage for Determined Debt Destruction!</h1>
+		<p>
+			Please Login to use the full capabilities of this website!
+		</p>
+	{% endif %}
+		<div class="content-section">
+			<h1><a class="article-title" href="{% url 'income-manager-home' %}">Total Income Amount</a></h1>
+			<p>
+			
+			{% load humanize %}
+				${{incomeTotal|floatformat:2|intcomma}}<br>
+			</p>
+		</div>
+	<br>
+		<div class="content-section">
+			<h1><a class="article-title" href="{% url 'debt-manager-home' %}">Total Debt Amount</a></h1>
+			<p>
+			
+			{% load humanize %}
+				${{debtTotal|floatformat:2|intcomma}}<br>
+			</p>
+		</div>
+	<br>
+		<div class="content-section">
+			<h1><a class="article-title" href="{% url 'recurring-charges-manager-home' %}">Total Recurring Charge Amount</a></h1>
+			<p>
+			{% load humanize %}
+				${{chargeTotal|floatformat:2|intcomma}}<br>
+			</p>
+		</div>
 {% endblock content %}
