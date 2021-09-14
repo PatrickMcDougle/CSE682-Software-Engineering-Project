@@ -30,8 +30,15 @@ class IncomeListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         return Income.objects.filter(accountHolder=self.request.user).order_by('-payAmount')
         
-class IncomeDetailView(LoginRequiredMixin, DetailView):
+class IncomeDetailView(LoginRequiredMixin, UserPassesTestMixin, DetailView):
     model = Income
+    
+    #Check if current user is accountHolder of the Income to update
+    def test_func(self):
+        income = self.get_object()
+        if self.request.user == income.accountHolder:
+            return True
+        return False
 
 class IncomeCreateView(LoginRequiredMixin, CreateView):
     model = Income
