@@ -1,0 +1,41 @@
+{% extends "homepage/base.html" %}
+{% block content %}
+	<div class="content-section">
+		<h1 class="article-title">Income Source: {{ object.name }}</h1>
+		<p>
+		{% if object.payFrequency == 'D' %}
+			Pay Frequency: Daily<br>
+		{% elif object.payFrequency == 'W'%}
+			Pay Frequency: Weekly<br>
+		{% elif object.payFrequency == 'B'%}
+			Pay Frequency: Bi-weekly<br>
+		{% elif object.payFrequency == 'S'%}
+			Pay Frequency: Semi-Monthly<br>
+		{% elif object.payFrequency == 'M'%}
+			Pay Frequency: Monthly<br>
+		{% else %}
+			Pay Frequency: Yearly<br>
+		{% endif %}
+		{% load humanize %}
+		Pay Amount: ${{object.payAmount|floatformat:2|intcomma}}<br>
+		{% if object.payDay == 'M' %}
+			Pay Date: Monday<br>
+		{% elif object.payDay == 'T'%}
+			Pay Date: Tuesday<br>
+		{% elif object.payDay == 'W'%}
+			Pay Date: Wednesday<br>
+		{% elif object.payDay == 'R'%}
+			Pay Date: Thursday<br>
+		{% else %}
+			Pay Date: Friday<br>
+		{% endif %}
+		Calculated Monthly Income: ${{object.determineMonthlyIncome|floatformat:2|intcomma}}<br></p>
+		<div>
+			{% if object.accountHolder == user %}
+				<a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'income-update' object.id %}">Update</a>
+				<a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'income-delete' object.id %}">Delete</a>
+			{% endif %}
+		</div>
+		</p>
+	</div>		
+{% endblock content %}

@@ -1,0 +1,65 @@
+{% extends "homepage/base.html" %}
+{% block content %}
+	<div class=content-section">
+		<center><a class="btn btn-outline-secondary" href="{% url 'income-create' %}">New Income</a></center>
+	</div>
+	<br>
+	{% for income in incomes %}
+		<div class="content-section">
+			<h1><a class="article-title" href="{% url 'income-detail' income.id %}">Income Source:{{ income.name }}</a></h1>
+			<p>
+			{% if income.payFrequency == 'D' %}
+				Pay Frequency: Daily<br>
+			{% elif income.payFrequency == 'W'%}
+				Pay Frequency: Weekly<br>
+			{% elif income.payFrequency == 'B'%}
+				Pay Frequency: Bi-weekly<br>
+			{% elif income.payFrequency == 'S'%}
+				Pay Frequency: Semi-Monthly<br>
+			{% elif income.payFrequency == 'M'%}
+				Pay Frequency: Monthly<br>
+			{% else %}
+				Pay Frequency: Yearly<br>
+			{% endif %}
+			{% load humanize %}
+			Pay Amount: ${{income.payAmount|floatformat:2|intcomma}}<br>
+			{% if income.payDay == 'M' %}
+				Pay Date: Monday<br>
+			{% elif income.payDay == 'T'%}
+				Pay Date: Tuesday<br>
+			{% elif income.payDay == 'W'%}
+				Pay Date: Wednesday<br>
+			{% elif income.payDay == 'R'%}
+				Pay Date: Thursday<br>
+			{% else %}
+				Pay Date: Friday<br>
+			{% endif %}
+			Calculated Monthly Income: ${{income.determineMonthlyIncome|floatformat:2|intcomma}}<br></p>
+			</p>
+		</div>		
+			{% empty %}
+				<div class="content-section">
+				<h1>No Incomes Found!</h1>
+				</div>
+	{% endfor %}
+	{% if is_paginated %}
+		{% if page_obj.has_previous %}
+			<a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+			<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+		{% endif %}
+		
+		{% for num in page_obj.paginator.page_range %}
+			{% if page_obj.number == num %}
+				<a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+			{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+				<a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+			{% endif %}
+		{% endfor %}
+		
+		{% if page_obj.has_next %}
+			<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+			<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+		{% endif %}
+		
+	{% endif %}
+{% endblock content %}
