@@ -4,8 +4,9 @@ The project for CSE682 Software Engineering course at Syracuse University.
 Our program is Determined Debt Destruction.  It was developed by:
 Jamie Clark, Will Clingan, Yannick Endeme, Patrick McDougle, and Dustin Naylor
 
-Python 3.9
-Django
+Software Utilized:
+   1. Python 3.9
+   2. Django
 
 Once you have downloaded the source code, in order to run the application:
 1. Navigate to determinedDebtDestruction (you should see manage.py)
